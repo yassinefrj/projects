@@ -1,0 +1,664 @@
+<!--
+https://pandoc.org/
+pdf produit avec la commande :
++ pandoc -V papersize=a4 -V geometry=landscape --pdf-engine=pdflatex -o nvs-04_52075_54147.pdf nvs-04_52075_54147.md
+
+alternative :
++ pandoc -V papersize=a4 --pdf-engine=xelatex -o nvs-04_52075_54147.pdf nvs-04_52075_54147.md
+
+alternative :
+https://www.npmjs.com/package/md-to-pdf
++ md-to-pdf nvs-04_52075_54147.md
+
+html produit avec la commande :
++ pandoc -V papersize=a4 --pdf-engine=xelatex -o nvs-04_52075_54147.html nvs-04_52075_54147.md
+
+alternative :
+https://www.npmjs.com/package/markdown-to-html
++ markdown nvs-04_52075_54147.md > nvs-04_52075_54147.html
+-->
+<!-- # commentaires nvs : stratego : nvs-04 -->
+<h1 id="stratego-nvs-04-52075-54147">Stratego : nvs-04 (52075 &amp;
+54147)</h1>
+<h2 id="dépôt">dépôt</h2>
+<p><a
+href="https://git.esi-bru.be/54147/dev4_stratego_54147_52075">https://git.esi-bru.be/54147/dev4_stratego_54147_52075</a></p>
+<p><code>git@git.esi-bru.be:54147/dev4_stratego_54147_52075.git</code></p>
+<h3 id="gitignore">.gitignore</h3>
+<ul>
+<li>ko : pas de fichier <code>.gitignore</code>, mais un fichier
+<code>gitignore</code>… le dossier <code>.git</code> fait 6,27 Mo.</li>
+</ul>
+<h2 id="modélisation">modélisation</h2>
+<h3 id="remise">remise</h3>
+<h4 id="tag-commit">tag / commit</h4>
+<p>ok.</p>
+<h4 id="retard">retard</h4>
+<p>(void)</p>
+<h4 id="autre">autre</h4>
+<p>(void)</p>
+<h3 id="analyse">analyse</h3>
+<p>retour fait oralement.</p>
+<h2 id="console">console</h2>
+<h3 id="remise-1">remise</h3>
+<h4 id="tag-commit-1">tag / commit</h4>
+<p>ok.</p>
+<h4 id="retard-1">retard</h4>
+<ul>
+<li>une version augmentée du rapport a été remise 5 jours après la date
+de remise 2.</li>
+</ul>
+<h4 id="autre-1">autre</h4>
+<p>(void)</p>
+<h3 id="documentation">documentation</h3>
+<ul>
+<li>les fichiers ne sont pas documentés, mais comme tout est plongé dans
+l’espace de nommage <code>stratego</code>, la documentation des
+fonctions et énumérations est bien générée.</li>
+<li>méthodes privées de <code>Controller</code> documentées à moitié,
+pas de documentation des attributs privés des autres classes.</li>
+<li>pas de documentation pour les classes (<code>class</code>).</li>
+<li>pas de documentation des méthodes publiques de
+<code>class FileReader</code>, ni de
+<code>std::ostream &amp; operator&lt;&lt;(std::ostream &amp; os, const Difficulty&amp; dt);</code>
+et
+<code>std::ostream &amp; operator&lt;&lt;(std::ostream &amp; os, const Piece&amp; dt);</code>.</li>
+</ul>
+<h4 id="fichier-de-configuration-uniquement">fichier de configuration
+uniquement</h4>
+<p>ok.</p>
+<p>à l’ouverture de celui-ci avec doxywizard (doxygen 1.9.1), j’obtiens
+:</p>
+<pre><code>warning: ignoring unsupported tag &#39;SHOW_HEADERFILE&#39; at line 609, file C:/.../nvs-04_52075_54147/Doxyfile
+warning: ignoring unsupported tag &#39;WARN_IF_INCOMPLETE_DOC&#39; at line 827, file C:/.../nvs-04_52075_54147/Doxyfile
+warning: ignoring unsupported tag &#39;DOCSET_FEEDURL&#39; at line 1408, file C:/.../nvs-04_52075_54147/Doxyfile
+warning: ignoring unsupported tag &#39;FULL_SIDEBAR&#39; at line 1619, file C:/.../nvs-04_52075_54147/Doxyfile
+warning: ignoring unsupported tag &#39;OBFUSCATE_EMAILS&#39; at line 1650, file C:/.../nvs-04_52075_54147/Doxyfile
+warning: ignoring unsupported tag &#39;MATHJAX_VERSION&#39; at line 1709, file C:/.../nvs-04_52075_54147/Doxyfile
+warning: ignoring unsupported tag &#39;DIR_GRAPH_MAX_DEPTH&#39; at line 2566, file C:/.../nvs-04_52075_54147/Doxyfile</code></pre>
+<p>mais ça compile la documentation html.</p>
+<h3 id="rapport">rapport</h3>
+<h4 id="format-pdf">format pdf</h4>
+<p>ok.</p>
+<p><em>rem.</em> : une version non recevable du rapport a été déposée
+dans le dépôt le 30 mars 2022, soit 5 jours après la date de remise
+2.</p>
+<h4 id="bogue-non-signalé">bogue non signalé</h4>
+<p>(void)</p>
+<h4 id="écart-ajout-non-signalé">écart / ajout non signalé</h4>
+<p>(void)</p>
+<h4 id="autre-2">autre</h4>
+<p>(void)</p>
+<h3 id="rapport-code">rapport / code</h3>
+<h4 id="avertissement-restant">avertissement restant</h4>
+<h5 id="gcc">gcc</h5>
+<h6 id="signalé">signalé</h6>
+<p>(void)</p>
+<h6 id="non-signalé">non signalé</h6>
+<pre><code>utils/file_reader.cpp: Dans la fonction membre « std::vector&lt;std::__cxx11::basic_string&lt;char&gt; &gt; stratego::FileReader::getBluePieces() const »:
+utils/file_reader.cpp:284:1: attention: « return » manquant dans une fonction devant retourner une valeur [-Wreturn-type]
+  284 | }
+      | ^
+utils/file_reader.cpp: Dans la fonction membre « std::vector&lt;std::__cxx11::basic_string&lt;char&gt; &gt; stratego::FileReader::getRedPieces() const »:
+utils/file_reader.cpp:287:1: attention: « return » manquant dans une fonction devant retourner une valeur [-Wreturn-type]
+  287 | }
+      | ^
+utils/file_reader.cpp: Dans la fonction membre « std::vector&lt;stratego::Piece&gt; stratego::FileReader::getListBluePiece() const »:
+utils/file_reader.cpp:291:1: attention: « return » manquant dans une fonction devant retourner une valeur [-Wreturn-type]
+  291 | }
+      | ^
+utils/file_reader.cpp: Dans la fonction membre « std::vector&lt;stratego::Piece&gt; stratego::FileReader::getListRedPiece() const »:
+utils/file_reader.cpp:294:1: attention: « return » manquant dans une fonction devant retourner une valeur [-Wreturn-type]
+  294 | }
+      | ^
+view/view.cpp: Dans la fonction membre « virtual void stratego::View::update(const nvs::Subject*) »:
+view/view.cpp:178:39: attention: paramètre « subject » inutilisé [-Wunused-parameter]
+  178 | void View::update(const nvs::Subject *subject){
+      |                   ~~~~~~~~~~~~~~~~~~~~^~~~~~~</code></pre>
+<p>ces avertissements ont été signalés dans le rapport remis en retard.
+ils sont pour ce qui concerne les <code>return</code> manquants.</p>
+<h5 id="gcc-clang-analyzer">gcc + clang-analyzer</h5>
+<pre><code>utils/file_reader.cpp: Dans la fonction membre « std::vector&lt;std::__cxx11::basic_string&lt;char&gt; &gt; stratego::FileReader::getBluePieces() const »:
+utils/file_reader.cpp:284:1: attention: « return » manquant dans une fonction devant retourner une valeur [-Wreturn-type]
+  284 | }
+      | ^
+utils/file_reader.cpp: Dans la fonction membre « std::vector&lt;std::__cxx11::basic_string&lt;char&gt; &gt; stratego::FileReader::getRedPieces() const »:
+utils/file_reader.cpp:287:1: attention: « return » manquant dans une fonction devant retourner une valeur [-Wreturn-type]
+  287 | }
+      | ^
+utils/file_reader.cpp: Dans la fonction membre « std::vector&lt;stratego::Piece&gt; stratego::FileReader::getListBluePiece() const »:
+utils/file_reader.cpp:291:1: attention: « return » manquant dans une fonction devant retourner une valeur [-Wreturn-type]
+  291 | }
+      | ^
+utils/file_reader.cpp: Dans la fonction membre « std::vector&lt;stratego::Piece&gt; stratego::FileReader::getListRedPiece() const »:
+utils/file_reader.cpp:294:1: attention: « return » manquant dans une fonction devant retourner une valeur [-Wreturn-type]
+  294 | }
+      | ^
+view/view.cpp: Dans la fonction membre « virtual void stratego::View::update(const nvs::Subject*) »:
+view/view.cpp:178:39: attention: paramètre « subject » inutilisé [-Wunused-parameter]
+  178 | void View::update(const nvs::Subject *subject){
+      |                   ~~~~~~~~~~~~~~~~~~~~^~~~~~~</code></pre>
+<p>c’est-à-dire idem <code>gcc</code>.</p>
+<h5 id="clang">clang++</h5>
+<p>idem <code>gcc</code>.</p>
+<h5 id="clang-clang-analyzer">clang++ + clang-analyzer</h5>
+<p>idem <code>gcc</code>.</p>
+<h5 id="cppcheck">cppcheck</h5>
+<h6 id="signalé-1">signalé</h6>
+<p>(void)</p>
+<h6 id="non-signalé-1">non signalé</h6>
+<pre><code>view/view.h: 22:5 [view/view.h:22]
+style : noExplicitConstructor
+    View(Stratego&amp; model);
+    ^
+Class &#39;View&#39; has a constructor with 1 argument that is not explicit.</code></pre>
+<p>cet avertissement a été signalé dans le rapport remis en retard.</p>
+<pre><code>model/board.h: 37:10 [model/board.cpp:25] -&gt; [model/board.h:37]
+performance (inconclusive) : functionStatic
+    bool isInside(const Position&amp; pos);
+         ^
+Technically the member function &#39;stratego::Board::isInside&#39; can be static (but you may consider moving to unnamed namespace).</code></pre>
+<pre><code>model/piece.h: 78:10 [model/piece.cpp:51] -&gt; [model/piece.h:78]
+style (inconclusive) : functionConst
+    bool isStronger(const Piece&amp; piece);
+         ^
+Technically the member function &#39;stratego::Piece::isStronger&#39; can be const.</code></pre>
+<pre><code>model/piece.cpp: 55:57 [model/piece.h:81] -&gt; [model/piece.cpp:55]
+style (inconclusive) : funcArgNamesDifferent
+std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const Piece&amp; p){
+                                                        ^
+Function &#39;operator&lt;&lt;&#39; argument 2 names different: declaration &#39;dt&#39; definition &#39;p&#39;.</code></pre>
+<pre><code>model/position.h: 51:10 [model/position.cpp:25] -&gt; [model/position.h:51]
+style (inconclusive) : functionConst
+    bool operator==(const Position &amp; pos);
+         ^
+Technically the member function &#39;stratego::Position::operator==&#39; can be const.</code></pre>
+<pre><code>model/square.cpp: 42:58 [model/square.h:73] -&gt; [model/square.cpp:42]
+style (inconclusive) : funcArgNamesDifferent
+std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const Square&amp; sq){
+                                                         ^
+Function &#39;operator&lt;&lt;&#39; argument 2 names different: declaration &#39;dt&#39; definition &#39;sq&#39;.</code></pre>
+<pre><code>model/stratego.cpp: 5:11 [model/stratego.cpp:5]
+warning : uninitMemberVar
+Stratego::Stratego() : state_{State::NOT_STARTED},currentPlayer_{0}{
+          ^
+Member variable &#39;Stratego::difficulty_&#39; is not initialized in the constructor.</code></pre>
+<p>cet avertissement a été signalé dans le rapport remis en retard.</p>
+<pre><code>model/stratego.cpp: 25:13 [model/stratego.cpp:25]
+style : unreachableCode
+            notifyObservers();
+            ^
+Statements following return, break, continue, goto or throw will never be executed.</code></pre>
+<p>cet avertissement a été signalé dans le rapport remis en retard, mais
+pas correctement (<code>stratego.h</code> à la place de
+<code>stratego.cpp</code>).</p>
+<pre><code>model/stratego.cpp: 356:71 [model/stratego.h:138] -&gt; [model/stratego.cpp:356]
+style (inconclusive) : funcArgNamesDifferent
+bool Stratego::isMoveScoutExact(const Position&amp; start,const Position&amp; end){
+                                                                      ^
+Function &#39;isMoveScoutExact&#39; argument 2 names different: declaration &#39;posEnd&#39; definition &#39;end&#39;.</code></pre>
+<pre><code>model/stratego.cpp: 166:24 [model/stratego.cpp:166]
+style : unreadVariable
+    Square squareStart = this-&gt;board_.getSquare(this-&gt;selected_);
+                       ^
+Variable &#39;squareStart&#39; is assigned a value that is never used.</code></pre>
+<p>cet avertissement a été signalé dans le rapport remis en retard.</p>
+<pre><code>utils/file_reader.cpp: 284:1 [utils/file_reader.cpp:284]
+error : missingReturn
+}
+^
+Found a exit path from function with non-void return type that has missing return statement</code></pre>
+<p>cet avertissement a été signalé dans le rapport remis en retard.</p>
+<pre><code>utils/file_reader.cpp: 287:1 [utils/file_reader.cpp:287]
+error : missingReturn
+}
+^
+Found a exit path from function with non-void return type that has missing return statement</code></pre>
+<p>cet avertissement a été signalé dans le rapport remis en retard.</p>
+<pre><code>utils/file_reader.cpp: 291:1 [utils/file_reader.cpp:291]
+error : missingReturn
+}
+^
+Found a exit path from function with non-void return type that has missing return statement</code></pre>
+<p>cet avertissement a été signalé dans le rapport remis en retard.</p>
+<pre><code>utils/file_reader.cpp: 294:1 [utils/file_reader.cpp:294]
+error : missingReturn
+}
+^
+Found a exit path from function with non-void return type that has missing return statement</code></pre>
+<p>cet avertissement a été signalé dans le rapport remis en retard.</p>
+<pre><code>utils/file_reader.h: 25:10 [utils/file_reader.cpp:277] -&gt; [utils/file_reader.h:25]
+performance (inconclusive) : functionStatic
+    void readFilePiece();
+         ^
+Technically the member function &#39;stratego::FileReader::readFilePiece&#39; can be static (but you may consider moving to unnamed namespace).</code></pre>
+<pre><code>utils/file_reader.h: 27:30 [utils/file_reader.cpp:282] -&gt; [utils/file_reader.h:27]
+performance (inconclusive) : functionStatic
+    std::vector&lt;std::string&gt; getBluePieces() const;
+                             ^
+Technically the member function &#39;stratego::FileReader::getBluePieces&#39; can be static (but you may consider moving to unnamed namespace).</code></pre>
+<pre><code>utils/file_reader.h: 28:30 [utils/file_reader.cpp:285] -&gt; [utils/file_reader.h:28]
+performance (inconclusive) : functionStatic
+    std::vector&lt;std::string&gt; getRedPieces() const;
+                             ^
+Technically the member function &#39;stratego::FileReader::getRedPieces&#39; can be static (but you may consider moving to unnamed namespace).</code></pre>
+<pre><code>utils/file_reader.h: 30:24 [utils/file_reader.cpp:289] -&gt; [utils/file_reader.h:30]
+performance (inconclusive) : functionStatic
+    std::vector&lt;Piece&gt; getListBluePiece() const;
+                       ^
+Technically the member function &#39;stratego::FileReader::getListBluePiece&#39; can be static (but you may consider moving to unnamed namespace).</code></pre>
+<pre><code>utils/file_reader.h: 31:24 [utils/file_reader.cpp:292] -&gt; [utils/file_reader.h:31]
+performance (inconclusive) : functionStatic
+    std::vector&lt;Piece&gt; getListRedPiece() const;
+                       ^
+Technically the member function &#39;stratego::FileReader::getListRedPiece&#39; can be static (but you may consider moving to unnamed namespace).</code></pre>
+<pre><code>utils/file_reader.cpp: 19:9 [utils/file_reader.cpp:19]
+style : variableScope
+    int countRed = 0;
+        ^
+The scope of the variable &#39;countRed&#39; can be reduced.</code></pre>
+<p>cet avertissement a été signalé dans le rapport remis en retard.</p>
+<pre><code>utils/file_reader.cpp: 20:9 [utils/file_reader.cpp:20]
+style : variableScope
+    int countBlue = 0;
+        ^
+The scope of the variable &#39;countBlue&#39; can be reduced.</code></pre>
+<p>cet avertissement a été signalé dans le rapport remis en retard.</p>
+<pre><code>view/view.cpp: 61:45 [view/view.cpp:61]
+performance : passedByValue
+void View::askPlacementPosition(std::string piece ,Color color){
+                                            ^
+Function parameter &#39;piece&#39; should be passed by const reference.</code></pre>
+<p>cet avertissement a été signalé dans le rapport remis en retard.</p>
+<pre><code>view/view.cpp: 61:0 [view/view.cpp:61]
+style : unusedFunction
+
+^
+The function &#39;askPlacementPosition&#39; is never used.</code></pre>
+<pre><code>utils/file_reader.cpp: 282:0 [utils/file_reader.cpp:282]
+style : unusedFunction
+
+^
+The function &#39;getBluePieces&#39; is never used.</code></pre>
+<pre><code>model/stratego.cpp: 344:0 [model/stratego.cpp:344]
+style : unusedFunction
+
+^
+The function &#39;getInteractiveBlue&#39; is never used.</code></pre>
+<pre><code>model/stratego.cpp: 347:0 [model/stratego.cpp:347]
+style : unusedFunction
+
+^
+The function &#39;getInteractiveRed&#39; is never used.</code></pre>
+<pre><code>utils/file_reader.cpp: 289:0 [utils/file_reader.cpp:289]
+style : unusedFunction
+
+^
+The function &#39;getListBluePiece&#39; is never used.</code></pre>
+<pre><code>utils/file_reader.cpp: 292:0 [utils/file_reader.cpp:292]
+style : unusedFunction
+
+^
+The function &#39;getListRedPiece&#39; is never used.</code></pre>
+<pre><code>utils/file_reader.cpp: 285:0 [utils/file_reader.cpp:285]
+style : unusedFunction
+
+^
+The function &#39;getRedPieces&#39; is never used.</code></pre>
+<pre><code>model/stratego.cpp: 276:0 [model/stratego.cpp:276]
+style : unusedFunction
+
+^
+The function &#39;isFullCorrectly&#39; is never used.</code></pre>
+<pre><code>utils/subject.cpp: 11:0 [utils/subject.cpp:11]
+style : unusedFunction
+
+^
+The function &#39;unregisterObserver&#39; is never used.</code></pre>
+<pre><code>nofile: 0:0
+information : missingInclude
+
+Cppcheck cannot find all the include files (use --check-config for details)</code></pre>
+<h3 id="code-source">code source</h3>
+<h4 id="portabilité">portabilité</h4>
+<h5 id="casse-noms-fichiers">casse noms fichiers</h5>
+<p>ok.</p>
+<h5 id="séparateur">séparateur /</h5>
+<p>ok.</p>
+<h5 id="c-standard">c++ standard</h5>
+<p>ok.</p>
+<h5 id="si-pas-std-portabilité">si pas std : portabilité</h5>
+<p>(void)</p>
+<h4 id="bonnes-pratiques">bonnes pratiques</h4>
+<h5 id="déclarations-anticipées-si-possible">déclarations anticipées si
+possible</h5>
+<ul>
+<li><p>dans <code>difficulty.h</code>, <code>piece.h</code> et
+<code>player.h</code> :</p>
+<pre><code>//#include &lt;iostream&gt;   // rnvs : include / déclaration anticipée
+#include &lt;ostream&gt;      // rnvs : include / déclaration anticipée</code></pre></li>
+<li><p>dans <code>position.h</code> :</p>
+<pre><code>// #include &lt;string&gt;        // rnvs : include / déclaration anticipée
+// #include &lt;ostream&gt;       // rnvs : include / déclaration anticipée</code></pre></li>
+<li><p>dans <code>board.h</code> :</p>
+<pre><code>// #include &quot;position.h&quot;    // rnvs : include / déclaration anticipée
+namespace stratego
+{
+
+class Position;             // rnvs : include / déclaration anticipée</code></pre></li>
+<li><p>dans <code>stratego.h</code> :</p>
+<pre><code>#include &lt;array&gt;        // rnvs : include / déclaration anticipée</code></pre></li>
+<li><p>dans <code>file_reader.h</code> :</p>
+<pre><code>#include &lt;string&gt;
+// #include &lt;fstream&gt;       // rnvs : include / déclaration anticipée
+#include &lt;vector&gt;
+//#include &quot;model/stratego.h&quot;   // rnvs : include / déclaration anticipée
+#include &quot;model/piece.h&quot;        // rnvs : include / déclaration anticipée
+namespace stratego
+{
+
+class Stratego;             // rnvs : include / déclaration anticipée</code></pre></li>
+<li><p>dans <code>view.h</code> :</p>
+<pre><code>#include &quot;utils/observer.h&quot;
+// #include &quot;model/stratego.h&quot;  // rnvs : include / déclaration anticipée
+#include &lt;string&gt;               // rnvs : include / déclaration anticipée
+
+namespace stratego
+{
+
+enum class Color;           // rnvs : include / déclaration anticipée
+class Stratego;             // rnvs : include / déclaration anticipée
+
+// class Subject;           // rnvs : include / déclaration anticipée</code></pre></li>
+<li><p>dans <code>controller.h</code> :</p>
+<pre><code>// #include &quot;model/stratego.h&quot;  // rnvs : include / déclaration anticipée
+// #include &quot;view/view.h&quot;       // rnvs : include / déclaration anticipée
+// #include &quot;utils/file_reader.h&quot;   // rnvs : include / déclaration anticipée
+// #include &quot;utils/keyboard.hpp&quot;    // rnvs : include / déclaration anticipée
+// #include &quot;utils/string_convert.hpp&quot;  // rnvs : include / déclaration anticipée
+
+namespace stratego
+{
+
+class Stratego;     // rnvs : include / déclaration anticipée
+class View;         // rnvs : include / déclaration anticipée
+class Position;     // rnvs : include / déclaration anticipée
+enum class Difficulty;  // rnvs : include / déclaration anticipée</code></pre></li>
+</ul>
+<h5 id="using-namespace-dans-.h">using namespace dans .h</h5>
+<p>ok.</p>
+<h5 id="autre-3">autre</h5>
+<p>(void)</p>
+<h4 id="gestion-de-la-mémoire">gestion de la mémoire</h4>
+<p>ok : pas de <code>new</code> dans les classes métier ni celles de
+l’application console.</p>
+<h4 id="tests-unitaires">tests unitaires</h4>
+<p>(ceci n’est pas demandé)</p>
+<p>(void)</p>
+<h4 id="classes-métier">classes métier</h4>
+<h5 id="initialisation">initialisation</h5>
+<h6 id="plateau">plateau</h6>
+<p>ok : plateau de jeu construit vide avec les pièces d’eau bien
+positionnées.</p>
+<p class="heading" id="interactive">interactive</p>
+<p>ko :</p>
+<ul>
+<li><code>Controller::interactivePlacement()</code> semble s’en occuper
+mais <code>Stratego::interactivePlacement()</code> ne place aucun pion
+sur le plateau de jeu. ceci est signalé dans le rapport.</li>
+</ul>
+<p class="heading" id="fichiers">fichiers</p>
+<p>plutôt ko :</p>
+<ul>
+<li><code>FileReader::readFilePiece(Stratego &amp; game)</code> s’en
+charge : pas ok car c’est <code>Stratego</code> qui devrait plutôt le
+faire… d’autant plus que le placement se fait avec
+<code>Stratego::addPiece(const Position &amp; pos, Piece piece)</code>
+qui peut être appelé pendant la partie =&gt; possibilité de
+tricher…</li>
+</ul>
+<p class="heading"
+id="validation-du-nombre-de-pièces-de-chaque-type">validation du nombre
+de pièces de chaque type</p>
+<ul>
+<li><p>interactif : ko.</p></li>
+<li><p>fichiers : ok dans
+<code>FileReader::readFilePiece(Stratego &amp; game)</code> mais code
+avec beaucoup de duplication et de variables, moche et non
+modulaire.</p></li>
+</ul>
+<h6 id="possibilité-de-mode-débutant">possibilité de mode débutant</h6>
+<p>ok : <code>Stratego::startStratego(Difficulty difficulty)</code> s’en
+occupe avant le début de la bataille.</p>
+<h6 id="joueurs-éventuellement">joueurs (éventuellement)</h6>
+<p>il y a une classe <code>Player</code>. elle enveloppe juste une
+<code>enum class Color</code> et n’apporte aucune plus value par rapport
+à cette énumération.</p>
+<h5 id="déplacement">déplacement</h5>
+<h6 id="obligatoire">obligatoire</h6>
+<p>ko : <code>Stratego::turnPlayed()</code> est <code>public</code> et
+ne vérifie pas qu’un déplacement ou combat a eu lieu : on peut donc
+sélectionner une pièce puis passer son tour, sans se déplacer.</p>
+<h6 id="pièces-deau-inaccessibles">pièces d’eau inaccessibles</h6>
+<p>ok :
+<code>Stratego::isSelectionExact(const Position &amp; pos)</code> s’en
+occupe.</p>
+<h6 id="éclaireur">éclaireur</h6>
+<p class="heading" id="latéral-uniquement">latéral uniquement</p>
+<p>ok : voir
+<code>Stratego::movePieceScout(const Position &amp; pos)</code>.</p>
+<p class="heading" id="illimité-sauf-obstacle">illimité sauf
+obstacle</p>
+<p>ok : voir
+<code>Stratego::movePieceScout(const Position &amp; pos)</code>.</p>
+<h6 id="bombes-et-drapeau-immobiles">bombes et drapeau immobiles</h6>
+<p>ok :
+<code>Stratego::isSelectionExact(const Position &amp; pos)</code> s’en
+occupe.</p>
+<h6 id="autres-pièces">autres pièces</h6>
+<p class="heading" id="latéral-uniquement-1">latéral uniquement</p>
+<p>ko :</p>
+<ul>
+<li><code>Stratego::movePieceNormal(const Position &amp; pos)</code>
+vérifie si déplacement de 1 latéral mais pas exclusivement =&gt;
+diagonale possible.</li>
+</ul>
+<p class="heading" id="une-seule-position">une seule position</p>
+<p>ok : voir
+<code>Stratego::movePieceNormal(const Position &amp; pos)</code>.</p>
+<h6 id="limite-des-3-allers---retours">limite des 3 allers -
+retours</h6>
+<ul>
+<li>ko : pas implémenté.</li>
+</ul>
+<h5 id="combat">combat</h5>
+<h6 id="détection">détection</h6>
+<p>ok : dans
+<code>Stratego::movePieceNormal(const Position &amp; pos)</code> et
+<code>Stratego::movePieceScout(const Position &amp; pos)</code>.</p>
+<h6 id="résolution">résolution</h6>
+<p>ok : voir
+<code>Stratego::attack(const Position &amp; pos)</code>.</p>
+<p class="heading" id="cas-de-lespionne">cas de l’espionne</p>
+<p>ok : voir
+<code>Stratego::attack(const Position &amp; pos)</code>.</p>
+<h5 id="fin-de-partie">fin de partie</h5>
+<p>ko :</p>
+<ul>
+<li>la méthode <code>Stratego::isFinish()</code> n’est invoquée par
+aucune méthode publique de <code>Stratego</code>. c’est le contrôleur
+qui s’en charge.</li>
+</ul>
+<h6 id="par-prise-de-drapeau">par prise de drapeau</h6>
+<p>ok : voir <code>Stratego::isFinish()</code>.</p>
+<h6 id="par-impossibilité-de-déplacement">par impossibilité de
+déplacement</h6>
+<p>ok : voir <code>Stratego::isFinish()</code>.</p>
+<p>ko :</p>
+<ul>
+<li>dans <code>Stratego::isFinish()</code> on vérifie s’il reste des
+pions déplaçables <em>en théorie</em>, mais il n’y a pas de vérification
+si effectivement ils sont déplaçables.</li>
+</ul>
+<h5 id="méthodes">méthodes</h5>
+<h6 id="complètes-1-méthode-1-action-de-jeu">complètes : 1 méthode / 1
+action de jeu</h6>
+<p>semble ok : le déplacement se fait en 2 méthodes distinctes :
+<code>Stratego::selectPiece(const Position &amp; pos)</code> puis
+<code>Stratego::movePiece(const Position &amp; pos)</code> qui invoque
+<code>Stratego::movePieceScout(const Position &amp; pos)</code> ou
+<code>Stratego::movePieceNormal(const Position &amp; pos)</code> qui
+vérifient bien que le jeu est dans l’état
+<code>State::PIECE_SELECTED</code>.</p>
+<p>mais en fait ko :</p>
+<ul>
+<li>la détection de fin de jeu ne se fait pas automatiquement après /
+avant un déplacement.</li>
+</ul>
+<h6 id="impossibilité-de-tricher-bibliothèque">impossibilité de tricher
+(bibliothèque)</h6>
+<p>ko :</p>
+<ul>
+<li>il y a une <code>enum class State</code>, mais elle ne verrouille
+pas tout : par exemple il n’y a pas d’état pour indiquer si la plateau
+n’a pas ou a été construit.</li>
+<li><code>Stratego::startStratego(Difficulty difficulty)</code> ne
+vérifie pas si le plateau est ok.</li>
+<li><code>Stratego::addPiece(const Position &amp; pos, Piece piece)</code>
+est <code>public</code> et peut être appelé si
+<code>state_ == State::PIECE_SELECTED</code> mais ne vérifie rien
+d’autre.</li>
+<li><code>Stratego::selectPiece(const Position &amp; pos)</code> ne
+vérifie pas l’état du jeu : on peut l’appeler n’importe quand, même
+quand le plateau n’a pas été construit.</li>
+<li><code>Stratego::turnPlayed()</code> est <code>public</code> et ne
+vérifie pas qu’un déplacement ou combat a eu lieu : on peut donc
+sélectionner une pièce puis passer son tour, sans se déplacer.</li>
+</ul>
+<h4 id="contrôleur">contrôleur</h4>
+<h5 id="fiabilisation-lectures-clavier">fiabilisation lectures
+clavier</h5>
+<p>ko : les lignes vont de 0 à 9 et non de 1 à 10 comme demandé.</p>
+<h5 id="respect-de-la-convention-didentification-des-cases">respect de
+la convention d’identification des cases</h5>
+<p>ok.</p>
+<h6 id="légende">légende</h6>
+<p>ok.</p>
+<h5 id="convivialité">convivialité</h5>
+<ul>
+<li>il semble possible de désélectionner la pièce fournie, mais j’ai
+beau dire <code>O</code>, cela ne fonctionne pas.</li>
+<li>détection de sélection d’une pièce non déplaçable : ok.</li>
+</ul>
+<h5 id="alternance-des-joueurs">alternance des joueurs</h5>
+<h6 id="plateau-caché-entre-les-joueurs">plateau caché entre les
+joueurs</h6>
+<p>pas mis en œuvre.</p>
+<h6 id="information-si-un-combat-a-eu-lieu">information si un combat a
+eu lieu</h6>
+<p>pas implémenté : indiqué dans le rapport.</p>
+<h4 id="vue">vue</h4>
+<h5 id="design-pattern-observer">design pattern observer</h5>
+<p>ok.</p>
+<h5 id="absence-de-flux-cout-dans-classes-métier">absence de flux (cout)
+dans classes métier</h5>
+<p>ko ! <code>std::cout</code> dans : +
+<code>Stratego::switchPlayer()</code> +
+<code>FileReader::readFilePiece(Stratego&amp; game)</code></p>
+<h5 id="affichage">affichage</h5>
+<h6 id="masqué-en-mode-normal">masqué en mode normal</h6>
+<p>bug non signalé en mode normal :</p>
+<ul>
+<li>pas d’affichage du plateau après sa construction car
+<code>break</code> avant notification dans
+<code>Stratego::startStratego(Difficulty difficulty)</code>.</li>
+</ul>
+<h6 id="éventuellement-non-masqué-en-mode-débutant">éventuellement non
+masqué en mode débutant</h6>
+<p>ko :</p>
+<ul>
+<li>les pièces adverses sont bien visibles… mais rien n’indique que ce
+sont les pièces de l’adversaire : seule la force des pièces est
+indiquée, pas leur propriétaire.</li>
+</ul>
+<h6 id="cimetière">cimetière</h6>
+<p>il y a un attribut <code>deadPieces_</code> dans
+<code>Stratego</code>, mais pas de <em>getter</em>.</p>
+<h4 id="autre-4">autre</h4>
+<p>(void)</p>
+<h2 id="gui">gui</h2>
+<h3 id="remise-2">remise</h3>
+<h4 id="tag-commit-2">tag / commit</h4>
+<ul>
+<li>je ne vois pas le <em>tag</em> <code>gui</code> dans le dépôt
+utilisé pour les 2 remises précédentes. si je reclone, je le vois…</li>
+</ul>
+<h4 id="retard-2">retard</h4>
+<p>(void)</p>
+<h4 id="autre-5">autre</h4>
+<p>(void)</p>
+<h3 id="documentation-1">documentation</h3>
+<ul>
+<li><p>il y a un fichier pour Doxygen. quand je l’ouvre j’obtiens :</p>
+<pre><code>warning: ignoring unsupported tag &#39;TCL_SUBST&#39; at line 248, file C:/.../nvs-04_52075_54147_gui/GUI/Stratego_Gui/Doxyfile
+warning: ignoring unsupported tag &#39;COLS_IN_ALPHA_INDEX&#39; at line 1090, file C:/.../nvs-04_52075_54147_gui/GUI/Stratego_Gui/Doxyfile
+warning: ignoring unsupported tag &#39;PERL_PATH&#39; at line 2163, file C:/.../nvs-04_52075_54147_gui/GUI/Stratego_Gui/Doxyfile
+warning: ignoring unsupported tag &#39;MSCGEN_PATH&#39; at line 2185, file C:/.../nvs-04_52075_54147_gui/GUI/Stratego_Gui/Doxyfile</code></pre>
+<p>mais ça compile sans souci.</p></li>
+<li><p>fichiers et classes graphiques pas documentés, mais bien les
+méthodes publiques et privées de celles-ci, sauf
+<code>View::messageSelection()</code>.</p></li>
+</ul>
+<h3 id="rapport-1">rapport</h3>
+<h4 id="format-pdf-1">format pdf</h4>
+<p>ok.</p>
+<h4 id="bogue-non-signalé-1">bogue non signalé</h4>
+<ul>
+<li>il faut changer le nom du dossier en <code>Stratego_FinalV</code>
+pour que les ressources (fond de plateau, eau) soient bien
+chargées.</li>
+</ul>
+<h4 id="écart-ajout-non-signalé-1">écart / ajout non signalé</h4>
+<p>(void)</p>
+<h4 id="autre-6">autre</h4>
+<p>(void)</p>
+<h3 id="code-source-1">code source</h3>
+<h4 id="portabilité-1">portabilité</h4>
+<h5 id="casse-noms-fichiers-1">casse noms fichiers</h5>
+<p>ok.</p>
+<h5 id="séparateur-1">séparateur /</h5>
+<p>ok.</p>
+<h5 id="c-standard-qt">c++ standard + qt</h5>
+<p>ok.</p>
+<h5 id="si-pas-std-qt-portabilité">si pas std + qt : portabilité</h5>
+<p>(void)</p>
+<h4 id="gestion-de-la-mémoire-1">gestion de la mémoire</h4>
+<p>ok.</p>
+<h4 id="contrôleur-1">contrôleur</h4>
+<h5 id="respect-des-règles">respect des règles</h5>
+<p>ok.</p>
+<h5 id="convivialité-1">convivialité</h5>
+<ul>
+<li>placement interactif propre et facile : ok.</li>
+<li>choix des fichiers avec <code>QFileDialog</code> : ok.</li>
+<li>pour désélectionner un pion : réaliser un mouvement interdit.</li>
+<li>sélection origine / destination et ça marche : ok.</li>
+</ul>
+<h4 id="vue-1">vue</h4>
+<h5 id="design-pattern-observer-1">design pattern observer</h5>
+<p>ok.</p>
+<h5 id="convivialité-2">convivialité</h5>
+<ul>
+<li>image et valeurs des pions : ok.</li>
+<li>pas de rapport de combat, mais cimetière avec dernière pièce prise :
+on connaît donc l’identité du (ou des) perdant(s), pas du
+vainqueur.</li>
+<li>pas de masquage du plateau entre les 2 joueurs.</li>
+</ul>
+<h4 id="autre-7">autre</h4>
+<ul>
+<li>menu d’aide.</li>
+<li>menu <em>nouvelle partie</em>.</li>
+</ul>
+<h2 id="examen">examen</h2>
+<p>retours faits le jour même.</p>

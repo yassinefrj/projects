@@ -1,0 +1,20 @@
+utils/file_reader.cpp: Dans la fonction membre « std::vector<std::__cxx11::basic_string<char> > stratego::FileReader::getBluePieces() const »:
+utils/file_reader.cpp:284:1: attention: « return » manquant dans une fonction devant retourner une valeur [-Wreturn-type]
+  284 | }
+      | ^
+utils/file_reader.cpp: Dans la fonction membre « std::vector<std::__cxx11::basic_string<char> > stratego::FileReader::getRedPieces() const »:
+utils/file_reader.cpp:287:1: attention: « return » manquant dans une fonction devant retourner une valeur [-Wreturn-type]
+  287 | }
+      | ^
+utils/file_reader.cpp: Dans la fonction membre « std::vector<stratego::Piece> stratego::FileReader::getListBluePiece() const »:
+utils/file_reader.cpp:291:1: attention: « return » manquant dans une fonction devant retourner une valeur [-Wreturn-type]
+  291 | }
+      | ^
+utils/file_reader.cpp: Dans la fonction membre « std::vector<stratego::Piece> stratego::FileReader::getListRedPiece() const »:
+utils/file_reader.cpp:294:1: attention: « return » manquant dans une fonction devant retourner une valeur [-Wreturn-type]
+  294 | }
+      | ^
+view/view.cpp: Dans la fonction membre « virtual void stratego::View::update(const nvs::Subject*) »:
+view/view.cpp:178:39: attention: paramètre « subject » inutilisé [-Wunused-parameter]
+  178 | void View::update(const nvs::Subject *subject){
+      |                   ~~~~~~~~~~~~~~~~~~~~^~~~~~~
