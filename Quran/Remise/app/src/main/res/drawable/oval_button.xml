@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FF0000" /> <!-- Couleur de remplissage -->
+    <corners android:radius="50dp" /> <!-- Rayon pour créer une forme ovale -->
+    <size android:width="200dp" android:height="100dp" /> <!-- Dimensions du bouton -->
+</shape>

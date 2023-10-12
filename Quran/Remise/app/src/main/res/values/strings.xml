@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Quran</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="about">About</string>
+    <string name="dev_about">
+        52075 \n
+        FERRAJ \n
+        Yassine \n
+        </string>
+    <string name="title_favorite">The More Read</string>
+    <string name="infos">Infos</string>
+    <string name="favorite">Favorite</string>
+    <string name="chapters">Chapters</string>
+    <string name="reading">Reading</string>
+    <string name="noConnexion">Please check your internet connexion and Retry</string>
+    <string name="download">Download</string>
+    <string name="clear_db">Clear DB</string>
+    <string name="downloaded">Downloaded</string>
+    <string name="surat_name_format">%1$d %2$s</string>
+
+
+</resources>

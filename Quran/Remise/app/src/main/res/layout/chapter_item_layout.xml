@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="listenerChapterToRead"
+            type="com.example.project.screens.chapterList.ChapterListener" />
+
+        <variable
+            name="listenerChapterToDownload"
+            type="com.example.project.screens.chapterList.DownloadListener" />
+
+        <variable
+            name="chapterJSON"
+            type="com.example.project.database.ChapterJSON" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_read"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="@{ () -> listenerChapterToRead.onClick(chapterJSON)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_download"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:suratName="@{chapterJSON}"
+            tools:text="Surat " />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_download"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="@{ () -> listenerChapterToDownload.onClick(chapterJSON)}"
+            android:text="@string/download"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_read"
+            app:layout_constraintTop_toTopOf="parent"
+            app:setIsEnabled="@{chapterJSON}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
