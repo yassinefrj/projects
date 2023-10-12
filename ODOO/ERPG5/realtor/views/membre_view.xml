@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="realtor.membre_view_type" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="priority">0</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <form string="Membre">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="myOffer" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

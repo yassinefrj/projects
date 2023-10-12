@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initialscale=1.0">
+    <title>{% block pagetitle %} Odoo {% endblock pagetitle %}</title>
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+    <script src="{% static 'jquery.min.js' %}"></script>
+    <script src="{% static 'popper.min.js' %}"></script>
+</head>
+
+<body>
+
+    <div class="p-3 bg-primary">
+        <a href="/" class="text-decoration-none">
+            <h1 class="text-white">{% block title %}Odoo - {% endblock title %}</h1>
+        </a>
+    </div>
+
+    {% block content %}
+    {% endblock content %}
+</body>
+
+</html>

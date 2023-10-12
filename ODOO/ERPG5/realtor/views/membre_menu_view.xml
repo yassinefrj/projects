@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="member_list_action" model="ir.actions.act_window">
+        <field name="name">Membres</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="main_realtor_menu" name="Realtor">
+        <menuitem id="realtor_menu" name="Realtor">
+            <menuitem id="membres_menu" name="Membres" action="member_list_action" />
+        </menuitem>
+    </menuitem>
+</odoo>

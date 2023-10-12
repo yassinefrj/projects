@@ -1,0 +1,69 @@
+{% extends '_base.html' %}
+{% block pagetitle %} Odoo - {{ apartment.name }} {% endblock pagetitle %}
+{% block title %}
+Odoo - {{ apartment.name }}
+<form action="{% url 'odooConnexion:log_out' %}" method="post" class="float-right">
+    {% csrf_token %}
+    <input type="submit" value="Log out" class="btn btn-secondary btn-lg">
+</form>
+{% endblock title %}
+{% block content %}
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title mb-4">{{ apartment.name }}</h2>
+            {%if apartment.description != "False"%} <p class="card-text">{{ apartment.description }}</p> {% endif %}
+            <p class="card-text"><strong>Availability:</strong> {{ apartment.disponibility }}</p>
+            <p class="card-text"><strong>Price:</strong> {{ apartment.price|stringformat:"d €" }}</p>
+            <p class="card-text"><strong>Surface:</strong> {{ apartment.surface|stringformat:"d m²" }}</p>
+            <p class="card-text"><strong>Terrace
+                    surface:</strong> {{ apartment.terasseSurface|stringformat:"d m²" }}
+            </p>
+            <p class="card-text"><strong>Total surface:</strong> {{ apartment.totalSurface|stringformat:"d m²" }}
+            </p>
+            <p class="card-text"><strong>Quantity:</strong> {{ quantity }}</p>
+            {% if apartment.image %}
+            <img src="data:image/png;base64,{{ apartment.image }}" alt="Apartment image" class="card-img-top">
+            {% endif %}
+            {% if apartment.bestOfferName %}
+            {% if apartment.bestOfferName != "False" %}
+            <p class="card-text mt-3"><strong>Best offer:</strong> {{ apartment.bestOfferName }} -
+                {{ apartment.bestOfferAmount|stringformat:"d €" }}</p>
+            {% endif%}
+            {% endif %}
+            <hr>
+            <h3>Submit an offer</h3>
+            <form method="post" action="{{apartment.get_offer_url}}">
+                {% csrf_token %}
+                {% if form.errors %}
+                <div class="alert alert-danger">
+                    {% for field in form %}
+                    {% for error in field.errors %}
+                    <p>{{ error }}</p>
+                    {% endfor %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    {{ form.name }}
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    {{ form.amount }}
+                </div>
+                <div class="form-group">
+                    {{ form.bestOfferAmount }}
+                </div>
+                <div class="form-group">
+                    {{ form.price }}
+                </div>
+                <button type="submit" class="btn btn-secondary">Submit</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

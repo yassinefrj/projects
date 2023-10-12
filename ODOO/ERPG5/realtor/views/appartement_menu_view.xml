@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="appartement_list_action" model="ir.actions.act_window">
+        <field name="name">Appartements</field>
+        <field name="res_model">realtor.appartement</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="main_realtor_menu" name="Realtor">
+        <menuitem id="realtor_menu" name="Realtor">
+            <menuitem id="appartements_menu" name="Appartements" action="appartement_list_action" />
+        </menuitem>
+    </menuitem>
+</odoo>

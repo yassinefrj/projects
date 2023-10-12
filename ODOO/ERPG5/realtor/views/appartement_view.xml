@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="realtor.appartement_view_type" model="ir.ui.view">
+        <field name="name">Appartement</field>
+        <field name="model">realtor.appartement</field>
+        <field name="arch" type="xml">
+            <form string="Appartement">
+                <sheet>
+                    <group>
+                        <field name="id" />
+                        <field name="name" />
+                        <field name="description" />
+                        <field name="price" />
+                        <field name="image" widget="image" />
+                        <field name="disponibility" />
+                        <field name="surface" />
+                        <field name="terasseSurface" />
+                        <field name="bestOfferName" />
+                        <field name="bestOfferAmount" />
+                        <field name="totalSurface" />
+                        <field name="create_date" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

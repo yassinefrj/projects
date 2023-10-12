@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="product_template_list_action" model="ir.actions.act_window">
+        <field name="name">Produits Template</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="main_realtor_menu" name="Realtor">
+        <menuitem id="realtor_menu" name="Realtor">
+            <menuitem id="product_template_menu" name="Produits Template" action="product_template_list_action" />
+        </menuitem>
+    </menuitem>
+</odoo>

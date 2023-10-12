@@ -1,0 +1,50 @@
+{% extends '_base.html' %}
+
+{% block pagetitle %} Odoo - Appartements {% endblock pagetitle %}
+
+{% block title %}
+Odoo - Appartements
+<form action="{% url 'odooConnexion:log_out' %}" method="post" class="float-right">
+    {% csrf_token %}
+    <input type="submit" value="Log out" class="btn btn-secondary btn-lg">
+</form>
+{% endblock title %}
+
+{% block content %}
+<h2 class="text-center">Logged as {{ user.username }}</h2>
+
+
+
+{% for apartment in apartments %}
+<div class="col-12">
+    <div class="card h-100">
+        <div class="media">
+            <img src="data:image/png;base64,{{ apartment.image }}" class="align-self-center mr-3" alt="Apartment Image"
+                style="width: 128px; height: 128px;">
+            <div class="media-body">
+                <h5 class="card-title mt-0">{{ apartment.name }}</h5>
+                <p class="card-text">
+                    Disponibility: {{ apartment.disponibility }}<br>
+                    Price: {{ apartment.price|stringformat:"d €" }}<br>
+                    Surface: {{ apartment.surface|stringformat:"d m²" }}
+                    <a href="{{ apartment.get_absolute_url }}" class="btn btn-link">View details</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

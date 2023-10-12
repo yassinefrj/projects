@@ -1,0 +1,51 @@
+{% extends '_base.html' %}
+
+{% block pagetitle %} Odoo - Connexion {% endblock pagetitle %}
+
+{% block title %}Odoo - Connexion{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-center text-white">
+                    <h3>Login</h3>
+                </div>
+                <div class="card-body bg-primary">
+                    <form action="{% url 'odooConnexion:log_in' %}" method="post">
+                        {% csrf_token %}
+                        {% for field in form %}
+                        <div class="form-group ">
+                            <label for="{{ field.name }}" class="text-white">{{ field.label }}</label><br>
+                            {% if field.name == "password" %}
+                            <input type="password" name="{{ field.name }}" id="{{ field.name }}" class="form-control">
+                            {% else %}
+                            <input type="text" name="{{ field.name }}" id="{{ field.name }}" class="form-control">
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                        <div class="form-group ">
+                            {{ form.errors }}
+                            {% if messages %}
+                            <ul class="messages alert alert-danger ">
+                                {% for message in messages %}
+                                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                                <li class="{{ message.tags }} h5">
+                                    {{ message }}
+                                </li>
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                            <button type="submit" class="btn btn-secondary btn-block">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
