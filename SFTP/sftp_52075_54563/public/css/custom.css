@@ -1,0 +1,47 @@
+select{
+    display: block !important;
+    border:1px solid transparent !important;
+    border-bottom: 1px solid #9e9e9e !important;
+    padding-left: 0px !important;
+    margin-bottom: 20px !important;
+    background: transparent !important;
+    background-color: transparent !important;
+}
+select:focus, select:active{
+    outline: 1px solid white !important;
+}
+.labelspecial{
+    margin-top: -25px;
+    font-size: .8rem !important;
+    left: 1px !important;
+}
+.mgdiv{
+    margin-bottom: 20px !important;
+}
+.sub_chk{
+    width: 12px !important;
+    height: 12px !important;
+}
+.sub_chk+label:before, .sub_chk:not(.filled-in)+label:after{
+    width: 12px !important;
+    height: 12px !important;
+}
+#master+label:before, #master:not(.filled-in)+label:after{
+    width: 12px !important;
+    height: 12px !important;
+}
+.btn{
+    margin-bottom: 6px !important;
+}
+.select2{
+    margin-top:10px !important;
+    width:100% !important;
+}
+.select2-container .select2-selection--single{
+    height: 35px !important;
+}
+.select2-container .select2-selection--single .select2-selection__rendered,
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    line-height: 35px !important;
+    height: 35px !important;
+}

@@ -1,0 +1,14 @@
+@font-face{
+    font-family:"Phetsarath OT";
+/*    src:url(Phetsarath OT.eot);*/
+    src: local("Phetsarath OT"), url('Phetsarath OT.ttf') format('truetype'); /*non IE */
+}
+html,
+body
+{
+    font-family:"Phetsarath OT", Helvetica, sans-serif !important;
+}
+
+p, div, td, tr, th, h1, h2, h3, h4, h5, a, li, ul{
+    font-family:"Phetsarath OT", Helvetica, sans-serif !important;;
+}
